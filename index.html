@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    body{
+      background: conic-gradient(from -90deg at 50% 105%, white, orchid)
+      overflow:hidden;
+     
+    }
+   
+.container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh;
+      overflow :hidden;
+      width:100%;
+    }
+    .calculator{
+      background: #f2f2f2;
+      padding:10px;
+      height:70vh;
+      width:50vh;
+      margin:20px;
+     box-shadow: 1px 0.5px 10px black;
+    }
+    button{
+      width:20%;
+      height:13%;
+      border: none;
+      margin: 5px;
+      font-size: 29px;
+      /*border-radius: 100px;*/
+      direction :ltr;
+      background: grey;
+      color: white;
+    }
+    button:hover{
+      background-color: rgba(120, 128,128, 0.3);
+    }
+    #userinput{
+      
+      width:90%;
+      padding:10px;
+     border: 1px solid black;
+      text-align:right;
+      margin:20px;
+      margin-left: 0;
+      background:#f2f2f2;
+      font-size: 40px;
+     
+    }
+    .result{
+      width: 95%;
+    } 
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="calculator">
+      <input  placeholder="0" id="userinput" disabled></input>
+      <br>
+      <button onclick="press(1)">1</button>
+      <button onclick="press(2)">2</button>
+      <button onclick="press(3)">3</button>
+      <button style="background-color: 	 #cc99ff" onclick="press('+')">+</button>
+      <br>
+      <button onclick="press(4)">4</button>
+      <button onclick="press(5)">5</button>
+      <button onclick="press(6)">6</button>
+      <button style="background-color:  	 #cc99ff" onclick="press('-')">-</button>
+    <br>
+      <button onclick="press(7)">7</button>
+      <button onclick="press(8)">8</button>
+      <button onclick="press(9)">9</button>
+      <button style="background-color:	 #cc99ff " onclick="press('*')">*</button>
+  <br>
+      <button onclick="press('.')">.</button>
+      <button onclick="press(0)">0</button>
+      <button style="background-color:	 #cc99ff"onclick="erase()">c</button>
+      <button style="background-color:#cc99ff" onclick="press('/')">/</button>
+
+  <br>
+    <button class="result"style="background-color: 	 #cc99ff"
+    onclick="equal()">=</button>
+      
+    </div>
+  </div>
+
+
+
+<script>
+  const userinput=document.getElementById("userinput");
+  var expression ='';
+  
+  function press(num){
+    expression += num;
+    userinput.value+=num;
+  }
+  
+  function equal(){
+    userinput.value=eval(expression);
+    expression ='';
+  }
+  
+  function erase(){
+expression='';
+userinput.value='';
+
+  }
+  
+  
+</script>
+
+
+
+</body>
+
+</html>
